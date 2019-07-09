@@ -26,7 +26,7 @@ wheels/
 *.egg
 MANIFEST
 venv
-comissao/__pycache__/
+comission/__pycache__/
 core/__pycache__/
 notificacoes/__pycache__/
 vendas/__pycache__/
