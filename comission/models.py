@@ -26,7 +26,9 @@ class ComissionPlan(models.Model):
         null=False)
 
     def __str__(self):
-        return self.nome
+        return f"""
+        {self.lower_percentage} < {self.upper_percentage} : {self.min_value}
+        """
 
     class Meta:
         verbose_name = "Comissão"
