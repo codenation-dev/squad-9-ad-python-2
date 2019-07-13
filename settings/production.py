@@ -26,7 +26,7 @@ INTERNAL_APPS = [
     'vendedor',
     'notificacoes',
     'vendas',
-	'comissao',
+	'comissions',
 ]
 
 INSTALLED_APPS += INTERNAL_APPS + EXTERNAL_APPS

@@ -1,6 +1,6 @@
 # coding=utf-8
 from django.db import models
-from comissao.models import Comissao
+from comission.models import ComissionPlan
 
 
 class Endereco(models.Model):
@@ -36,7 +36,7 @@ class Vendedor(models.Model):
     email = models.EmailField(verbose_name="Email", max_length=80, blank=False, null=False)
     endereco = models.OneToOneField(Endereco, related_name='endereco', on_delete=models.CASCADE,
                                     verbose_name='Endereco')
-    comissao = models.OneToOneField(Comissao, related_name='comissao', on_delete=models.CASCADE,
+    comissao = models.OneToOneField(ComissionPlan, related_name='comissao', on_delete=models.CASCADE,
                                     verbose_name='Comissao')
 
     def __str__(self):

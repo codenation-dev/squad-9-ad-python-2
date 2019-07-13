@@ -4,7 +4,7 @@ from vendedor.models import Vendedor
 
 class Vendas(models.Model):
     """
-        Modelo que representa a comissao do vendedor
+        Modelo que representa a venda mensal do vendedor
     """
     meses = (('Janeiro', 'Janeiro'), ("Fevereiro", "Fevereiro"), ("Março", "Março"), ("Abril", "Abril"),
              ("Maio", "Maio"), ("Junho", "Junho"), ("Julho", "Julho"), ("Agosto", "Agosto"), ("Setembro", "Setembro"),
