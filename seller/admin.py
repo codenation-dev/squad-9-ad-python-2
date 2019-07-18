@@ -3,49 +3,49 @@ from django.contrib import admin
 from vendedor.models import Vendedor, Endereco, Telefone
 
 
-class TelefoneInlineAdmin(admin.StackedInline):
-    model = Telefone
+class TelephoneInlineAdmin(admin.StackedInline):
+    model = Telephone
 
 
-class TelefoneAdmin(admin.ModelAdmin):
+class TelephoneAdmin(admin.ModelAdmin):
 
     # Exibir colunas para a tabela Courses no admin
-    list_display = ["ddd", "numero_telefone"]
+    list_display = ["ddd", "phone_number"]
 
     # Set campos de pesquisa
-    search_fields = ["ddd", "numero_telefone"]
+    search_fields = ["ddd", "phone_number"]
 
     # Filtro lateral
     list_filter = ["ddd", ]
 
 
-class EnderecoAdmin(admin.ModelAdmin):
+class AddressAdmin(admin.ModelAdmin):
     # Exibir colunas para a tabela Aulas no admin
-    list_display = ['logradouro', 'numero', "complemento", "cidade", "estado", "pais"]
+    list_display = ['street', 'number', "complement", "city", "state", "country"]
 
     # Set campos de pesquisa
-    search_fields = ['estado', 'cidade']
+    search_fields = ['state', 'city']
 
     # Filtro lateral
-    list_filter = ['estado', 'cidade']
+    list_filter = ['state', 'city']
 
 
-class VendedorAdmin(admin.ModelAdmin):
+class SellerAdmin(admin.ModelAdmin):
     # Exibir colunas para a tabela Courses no admin
-    list_display = ["cpf", "nome", "sobrenome", "idade", "email"]
+    list_display = ["cpf", "name", "last_name", "age", "email"]
 
     # Set campos de pesquisa
-    search_fields = ['cnpj', 'nome', 'idade']
+    search_fields = ['cpf', 'name', 'age']
 
     # # Preencher o campo slug com os valores do campo nome
     # prepopulated_fields = {'slug': ('name',)}
 
     # Filtro lateral
-    list_filter = ["idade",]
-    inlines = [TelefoneInlineAdmin]
+    list_filter = ["age",]
+    inlines = [TelephoneInlineAdmin]
 
 
 # Register your models here.
-admin.site.register(Endereco, EnderecoAdmin)
-admin.site.register(Telefone, TelefoneAdmin)
-admin.site.register(Vendedor, VendedorAdmin)
+admin.site.register(Address, AddressAdmin)
+admin.site.register(Telephone, TelephoneAdmin)
+admin.site.register(Seller, SellerAdmin)
