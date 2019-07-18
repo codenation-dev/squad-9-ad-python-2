@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('vendedor', '0001_initial'),
+        ('seller', '0001_initial'),
     ]
 
     operations = [
@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('mes', models.CharField(choices=[('Janeiro', 'Janeiro'), ('Fevereiro', 'Fevereiro'), ('Março', 'Março'), ('Abril', 'Abril'), ('Maio', 'Maio'), ('Junho', 'Junho'), ('Julho', 'Julho'), ('Agosto', 'Agosto'), ('Setembro', 'Setembro'), ('Outubro', 'Outubro'), ('Novembro', 'Novembro'), ('Dezembro', 'Dezembro')], max_length=15, verbose_name='Mes')),
                 ('valor_venda', models.DecimalField(decimal_places=2, max_digits=12, verbose_name='Valor Minimo')),
-                ('vendedor', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comissao_vendedor', to='vendedor.Vendedor', verbose_name='Vendedor')),
+                ('seller', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comissao_vendedor', to='seller.Seller', verbose_name='Vendedor')),
             ],
             options={
                 'verbose_name': 'Venda',
