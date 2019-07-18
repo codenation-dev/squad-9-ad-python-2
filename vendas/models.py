@@ -1,5 +1,5 @@
 from django.db import models
-from vendedor.models import Vendedor
+from seller.models import Seller
 
 
 class Vendas(models.Model):
@@ -10,7 +10,7 @@ class Vendas(models.Model):
              ("Maio", "Maio"), ("Junho", "Junho"), ("Julho", "Julho"), ("Agosto", "Agosto"), ("Setembro", "Setembro"),
              ("Outubro", "Outubro"), ("Novembro", "Novembro"), ("Dezembro", "Dezembro"))
 
-    vendedor = models.ForeignKey(Vendedor, related_name='comissao_vendedor', on_delete=models.CASCADE,
+    vendedor = models.ForeignKey(Seller, related_name='comissao_vendedor', on_delete=models.CASCADE,
                                  verbose_name='Vendedor')
 
     mes = models.CharField(verbose_name="Mes", choices=meses, null=False, blank=False, max_length=15)
