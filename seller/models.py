@@ -37,7 +37,7 @@ class Seller(models.Model):
     phone = models.CharField(verbose_name="Telefone", max_length=11, blank=False, null=False)
     address = models.OneToOneField(Address, related_name='address', on_delete=models.CASCADE,
                                     verbose_name='Endereco')
-    comission = models.OneToOneField(ComissionPlan, related_name='comission', on_delete=models.CASCADE,
+    comission = models.ForeignKey(ComissionPlan, related_name='comission', on_delete=models.CASCADE,
                                     verbose_name='Comissao')
 
     def __str__(self):
