@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
                 ('age', models.DateField(verbose_name='Idade')),
                 ('email', models.EmailField(max_length=80, verbose_name='Email')),
                 ('phone', models.CharField(max_length=11, verbose_name='Telefone')),
-                ('comission', models.ForeignKey(on_delete=models.deletion.CASCADE, related_name='comission', to='comission.ComissionPlan', verbose_name='Comissao')),
+                ('comission_plan', models.ForeignKey(on_delete=models.deletion.CASCADE, related_name='comission_plan', to='comission.ComissionPlan', verbose_name='Comissao')),
                 ('address', models.OneToOneField(on_delete=models.deletion.CASCADE, related_name='address', to='seller.Address', verbose_name='Endereco')),
             ],
             options={

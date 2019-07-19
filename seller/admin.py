@@ -1,9 +1,11 @@
 from django.contrib import admin
-
 from seller.models import Seller, Address
+
+
 class AddressAdmin(admin.ModelAdmin):
     # Exibir colunas para a tabela Aulas no admin
-    list_display = ['street', 'number', 'complement', 'city', 'state', 'country']
+    list_display = ['street', 'number', 'complement', 'city', 'state',
+                    'country']
 
     # Set campos de pesquisa
     search_fields = ['state', 'city']
