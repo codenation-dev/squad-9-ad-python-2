@@ -34,6 +34,7 @@ class Seller(models.Model):
     last_name = models.CharField(verbose_name="Sobrenome", null=False, blank=False, max_length=30)
     age = models.IntegerField(verbose_name="Idade", null=False, blank=False)
     email = models.EmailField(verbose_name="Email", max_length=80, blank=False, null=False)
+    phone = models.CharField(verbose_name="Telefone", max_length=11, blank=False, null=False)
     address = models.OneToOneField(Address, related_name='address', on_delete=models.CASCADE,
                                     verbose_name='Endereco')
     comission = models.OneToOneField(ComissionPlan, related_name='comission', on_delete=models.CASCADE,
@@ -46,24 +47,3 @@ class Seller(models.Model):
         verbose_name = "Vendedor"
         verbose_name_plural = "Vendedores"
         ordering = ['name', 'age']
-
-
-class Telephone(models.Model):
-    """
-        Modelo que representa o teleofne do vendedor
-    """
-
-    seller = models.ForeignKey(Seller, related_name='seller_phone', on_delete=models.CASCADE,
-                                 verbose_name='Vendedor')
-    ddd = models.CharField(verbose_name="DDD", null=False, blank=False, max_length=2)
-    phone_number = models.CharField(verbose_name="Numero", null=False, blank=False, max_length=15)
-
-    def __str__(self):
-        return self.ddd + self.phone_number
-
-    class Meta:
-        verbose_name = "Telefone"
-        verbose_name_plural = "Telefones"
-        ordering = ['ddd', 'phone_number']
-
-

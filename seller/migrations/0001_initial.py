@@ -8,7 +8,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('comission', '0001_initial'),
+        ('comission', '0001_initial')
     ]
 
     operations = [
@@ -38,6 +38,7 @@ class Migration(migrations.Migration):
                 ('last_name', models.CharField(max_length=30, verbose_name='Sobrenome')),
                 ('age', models.DateField(verbose_name='Idade')),
                 ('email', models.EmailField(max_length=80, verbose_name='Email')),
+                ('phone', models.CharField(max_length=11, verbose_name='Telefone')),
                 ('comission', models.OneToOneField(on_delete=models.deletion.CASCADE, related_name='comission', to='comission.ComissionPlan', verbose_name='Comissao')),
                 ('address', models.OneToOneField(on_delete=models.deletion.CASCADE, related_name='address', to='seller.Address', verbose_name='Endereco')),
             ],
@@ -46,19 +47,5 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'Vendedores',
                 'ordering': ['name', 'age'],
             },
-        ),
-        migrations.CreateModel(
-            name='Telefone',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('ddd', models.CharField(max_length=2, verbose_name='DDD')),
-                ('phone_number', models.CharField(max_length=15, verbose_name='Numero')),
-                ('seller', models.ForeignKey(on_delete=models.deletion.CASCADE, related_name='seller_phone', to='seller.Seller', verbose_name='Vendedor')),
-            ],
-            options={
-                'verbose_name': 'Telefone',
-                'verbose_name_plural': 'Telefones',
-                'ordering': ['ddd', 'phone_number'],
-            },
-        ),
+        )
     ]

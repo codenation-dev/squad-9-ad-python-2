@@ -1,27 +1,9 @@
 from django.contrib import admin
 
-from seller.models import Seller, Address, Telephone
-
-
-class TelephoneInlineAdmin(admin.StackedInline):
-    model = Telephone
-
-
-class TelephoneAdmin(admin.ModelAdmin):
-
-    # Exibir colunas para a tabela Courses no admin
-    list_display = ["ddd", "phone_number"]
-
-    # Set campos de pesquisa
-    search_fields = ["ddd", "phone_number"]
-
-    # Filtro lateral
-    list_filter = ["ddd", ]
-
-
+from seller.models import Seller, Address
 class AddressAdmin(admin.ModelAdmin):
     # Exibir colunas para a tabela Aulas no admin
-    list_display = ['street', 'number', "complement", "city", "state", "country"]
+    list_display = ['street', 'number', 'complement', 'city', 'state', 'country']
 
     # Set campos de pesquisa
     search_fields = ['state', 'city']
@@ -32,7 +14,7 @@ class AddressAdmin(admin.ModelAdmin):
 
 class SellerAdmin(admin.ModelAdmin):
     # Exibir colunas para a tabela Courses no admin
-    list_display = ["cpf", "name", "last_name", "age", "email"]
+    list_display = ['cpf', 'name', 'last_name', 'age', 'email', 'phone']
 
     # Set campos de pesquisa
     search_fields = ['cpf', 'name', 'age']
@@ -41,11 +23,9 @@ class SellerAdmin(admin.ModelAdmin):
     # prepopulated_fields = {'slug': ('name',)}
 
     # Filtro lateral
-    list_filter = ["age",]
-    inlines = [TelephoneInlineAdmin]
+    list_filter = ['age']
 
 
 # Register your models here.
 admin.site.register(Address, AddressAdmin)
-admin.site.register(Telephone, TelephoneAdmin)
 admin.site.register(Seller, SellerAdmin)
