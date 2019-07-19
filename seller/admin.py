@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from vendedor.models import Vendedor, Endereco, Telefone
+from seller.models import Seller, Address, Telephone
 
 
 class TelephoneInlineAdmin(admin.StackedInline):

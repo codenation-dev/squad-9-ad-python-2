@@ -34,7 +34,7 @@ class Seller(models.Model):
     last_name = models.CharField(verbose_name="Sobrenome", null=False, blank=False, max_length=30)
     age = models.IntegerField(verbose_name="Idade", null=False, blank=False)
     email = models.EmailField(verbose_name="Email", max_length=80, blank=False, null=False)
-    address = models.OneToOneField(Endereco, related_name='address', on_delete=models.CASCADE,
+    address = models.OneToOneField(Address, related_name='address', on_delete=models.CASCADE,
                                     verbose_name='Endereco')
     comission = models.OneToOneField(ComissionPlan, related_name='comission', on_delete=models.CASCADE,
                                     verbose_name='Comissao')
@@ -45,7 +45,7 @@ class Seller(models.Model):
     class Meta:
         verbose_name = "Vendedor"
         verbose_name_plural = "Vendedores"
-        ordering = ['nome', 'idade']
+        ordering = ['name', 'age']
 
 
 class Telephone(models.Model):
@@ -64,6 +64,6 @@ class Telephone(models.Model):
     class Meta:
         verbose_name = "Telefone"
         verbose_name_plural = "Telefones"
-        ordering = ['ddd', 'numero_telefone']
+        ordering = ['ddd', 'phone_number']
 
 

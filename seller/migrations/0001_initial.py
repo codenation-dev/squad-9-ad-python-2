@@ -38,8 +38,8 @@ class Migration(migrations.Migration):
                 ('last_name', models.CharField(max_length=30, verbose_name='Sobrenome')),
                 ('age', models.DateField(verbose_name='Idade')),
                 ('email', models.EmailField(max_length=80, verbose_name='Email')),
-                ('comission', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='comission', to='comission.ComissionPlan', verbose_name='Comissao')),
-                ('address', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='address', to='seller.Address', verbose_name='Endereco')),
+                ('comission', models.OneToOneField(on_delete=models.deletion.CASCADE, related_name='comission', to='comission.ComissionPlan', verbose_name='Comissao')),
+                ('address', models.OneToOneField(on_delete=models.deletion.CASCADE, related_name='address', to='seller.Address', verbose_name='Endereco')),
             ],
             options={
                 'verbose_name': 'Vendedor',
@@ -53,7 +53,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('ddd', models.CharField(max_length=2, verbose_name='DDD')),
                 ('phone_number', models.CharField(max_length=15, verbose_name='Numero')),
-                ('seller', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='seller_phone', to='seller.Seller', verbose_name='Vendedor')),
+                ('seller', models.ForeignKey(on_delete=models.deletion.CASCADE, related_name='seller_phone', to='seller.Seller', verbose_name='Vendedor')),
             ],
             options={
                 'verbose_name': 'Telefone',

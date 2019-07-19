@@ -23,7 +23,7 @@ EXTERNAL_APPS = [
 
 #Aplicativos internos
 INTERNAL_APPS = [
-    'vendedor',
+    'seller',
     'notificacoes',
     'vendas',
 	'comissions',
