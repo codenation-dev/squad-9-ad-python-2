@@ -78,7 +78,7 @@ class Seller(models.Model):
                                    verbose_name='Endereco')
     comission_plan = models.ForeignKey(ComissionPlan,
                                        related_name='comission_plan',
-                                       on_delete=models.CASCADE,
+                                       on_delete=models.PROTECT,
                                        verbose_name='Comissao')
 
     def __str__(self):
