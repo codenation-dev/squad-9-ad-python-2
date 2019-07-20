@@ -11,7 +11,8 @@ class SellerAPITest(APITestCase):
             'min_value': 15000.00,
             'upper_percentage': 15.0
         }
-        response = self.client.post('/comissions/', comission_plan, format='json')
+        response = self.client.post('/comissions/',
+                                    comission_plan, format='json')
 
         seller = {
             'cpf': '12345679855',
@@ -31,7 +32,7 @@ class SellerAPITest(APITestCase):
             'comission_plan': 1
         }
         response = self.client.post('/sellers/', seller, format='json')
-        
+
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         # Parses response body and check data.
         body = response.json()

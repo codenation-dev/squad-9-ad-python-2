@@ -50,7 +50,7 @@ class Migration(migrations.Migration):
                                           verbose_name='Nome')),
                 ('last_name', models.CharField(max_length=30,
                                                verbose_name='Sobrenome')),
-                ('age', models.DateField(verbose_name='Idade')),
+                ('age', models.IntegerField(verbose_name='Idade')),
                 ('email', models.EmailField(max_length=80,
                                             verbose_name='Email')),
                 ('phone', models.CharField(max_length=11,
