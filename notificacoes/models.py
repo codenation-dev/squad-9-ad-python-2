@@ -7,7 +7,7 @@ class Notificacoes(models.Model):
         Modelo que representa as notificacoes do vendedor
     """
 
-    vendedor = models.ForeignKey(Seller, related_name='notificacoes_vendedor', on_delete=models.CASCADE,
+    seller = models.ForeignKey(Seller, related_name='notificacoes_vendedor', on_delete=models.CASCADE,
                                  verbose_name='Vendedor')
 
     media_venda = models.DecimalField(verbose_name="Média comissão", decimal_places=2, max_digits=12, blank=False,
