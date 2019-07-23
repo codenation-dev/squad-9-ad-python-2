@@ -22,7 +22,7 @@ from notifications import views as notifications_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('comissions/', include('comission.urls')),
-    # path('notifications/', include('comission.urls')),
+    path('notifications/', include('notifications.urls')),
     path('check_commision/', notifications_views.check_commision),
     path('sellers/', include('seller.urls'))
 ]
