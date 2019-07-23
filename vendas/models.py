@@ -13,12 +13,12 @@ class Vendas(models.Model):
     seller = models.ForeignKey(Seller, related_name='comissao_vendedor', on_delete=models.CASCADE,
                                  verbose_name='Vendedor')
 
-    mes = models.CharField(verbose_name="Mes", choices=meses, null=False, blank=False, max_length=15)
+    month = models.CharField(verbose_name="Mes", choices=meses, null=False, blank=False, max_length=15)
 
-    valor_venda = models.DecimalField(verbose_name="Valor Minimo", decimal_places=2, max_digits=12, blank=False,
+    amount = models.DecimalField(verbose_name="Valor Minimo", decimal_places=2, max_digits=12, blank=False,
                                        null=False)
 
     class Meta:
         verbose_name = "Venda"
         verbose_name_plural = "Vendas"
-        ordering = ['-valor_venda', ]
+        ordering = ['-amount', ]

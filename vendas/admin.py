@@ -5,16 +5,16 @@ from vendas.models import Vendas
 
 class VendasAdmin(admin.ModelAdmin):
     # Exibir colunas para a tabela Courses no admin
-    list_display = ["mes", "valor_venda", "seller"]
+    list_display = ["month", "amount", "seller"]
 
     # Set campos de pesquisa
-    search_fields = ['mes', 'nome', 'idade']
+    search_fields = ['month', 'nome', 'idade']
 
     # # Preencher o campo slug com os valores do campo nome
     # prepopulated_fields = {'slug': ('name',)}
 
     # Filtro lateral
-    list_filter = ["mes", ]
+    list_filter = ["month", ]
 
 
 # Register your models here.

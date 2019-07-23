@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.urls import path
 
-# from notifications import views
+from notifications import views
 
-# urlpatterns = [
-#     path('', views.create_comission_plan)
-# ]
+urlpatterns = [
+    path('', views.check_commision)
+]

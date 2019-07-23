@@ -12,7 +12,7 @@ class Notification(models.Model):
         verbose_name='Vendedor',
         related_name='seller',
         on_delete=models.CASCADE)
-    ammount = models.DecimalField(
+    amount = models.DecimalField(
         verbose_name="Valor de venda",
         decimal_places=2,
         max_digits=12,
@@ -24,7 +24,7 @@ class Notification(models.Model):
         max_digits=12,
         blank=False,
         null=False)
-    date = models.DateTimeField(
+    notification_date = models.DateTimeField(
         verbose_name="Data de notificação",
         blank=False,
         null=False)
@@ -32,4 +32,4 @@ class Notification(models.Model):
     class Meta:
         verbose_name = "Notification"
         verbose_name_plural = "Notifications"
-        ordering = ['-date', ]
+        ordering = ['-seller', '-notification_date']
