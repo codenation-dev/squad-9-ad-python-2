@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('vendedor', '0001_initial'),
+        ('seller', '0001_initial'),
     ]
 
     operations = [
@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('media_venda', models.DecimalField(decimal_places=2, max_digits=12, verbose_name='Média comissão')),
-                ('vendedor', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='notificacoes_vendedor', to='vendedor.Vendedor', verbose_name='Vendedor')),
+                ('seller', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='notificacoes_vendedor', to='seller.Seller', verbose_name='Vendedor')),
             ],
             options={
                 'verbose_name': 'Notificação',

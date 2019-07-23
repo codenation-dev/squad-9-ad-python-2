@@ -5,7 +5,7 @@ from vendas.models import Vendas
 
 class VendasAdmin(admin.ModelAdmin):
     # Exibir colunas para a tabela Courses no admin
-    list_display = ["mes", "valor_venda", "vendedor"]
+    list_display = ["mes", "valor_venda", "seller"]
 
     # Set campos de pesquisa
     search_fields = ['mes', 'nome', 'idade']

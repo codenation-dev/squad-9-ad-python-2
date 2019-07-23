@@ -109,3 +109,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+#VSCode Folder
+.vscode
+.vscode/settings.json
+.vscode/settings.json
