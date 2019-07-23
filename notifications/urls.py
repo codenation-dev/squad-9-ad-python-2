@@ -13,16 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.urls import path
-from django.urls import include
 
-# from notifications import views as notifications_views
+# from notifications import views
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('comissions/', include('comission.urls')),
-    # path('notifications/', include('comission.urls')),
-    # path('check_comissions/', notifications_views.check_comissions),
-    path('sellers/', include('seller.urls'))
-]
+# urlpatterns = [
+#     path('', views.create_comission_plan)
+# ]
