@@ -27,7 +27,10 @@ class ComissionPlan(models.Model):
 
     def __str__(self):
         return f"""
-        {self.lower_percentage} < {self.upper_percentage} : {self.min_value}
+            {self.id}.
+             Porcentagem Menor: {self.lower_percentage}%\
+             - se vender o Valor Mínimo de R${self.min_value}\
+             recebe a Porcentagem Maior: {self.upper_percentage}%
         """
 
     class Meta:

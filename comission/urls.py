@@ -13,10 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path
+from django.urls import path, include
 
 from comission import views
 
+from rest_framework.routers import DefaultRouter
+
+
+router = DefaultRouter()
+router.register('', views.ComissionViewSet)
+
 urlpatterns = [
-    path('', views.create_comission_plan)
+    path('', include(router.urls))
 ]
