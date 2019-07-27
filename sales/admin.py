@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from vendas.models import Vendas
+from sales.models import Sales
 
 
-class VendasAdmin(admin.ModelAdmin):
+class SalesAdmin(admin.ModelAdmin):
     # Exibir colunas para a tabela Courses no admin
     list_display = ["month", "amount", "seller"]
 
@@ -18,4 +18,4 @@ class VendasAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
-admin.site.register(Vendas, VendasAdmin)
+admin.site.register(Sales, SalesAdmin)

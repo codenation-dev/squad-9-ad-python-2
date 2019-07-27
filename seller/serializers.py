@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from seller.models import Address, Seller
-from comission.models import ComissionPlan
 
 
 class AddressSerializer(serializers.ModelSerializer):
@@ -12,8 +11,6 @@ class AddressSerializer(serializers.ModelSerializer):
 
 class SellerModelSerializer(serializers.ModelSerializer):
     address = AddressSerializer()
-    comission_plan = serializers.PrimaryKeyRelatedField(
-        queryset=ComissionPlan.objects.all())
 
     class Meta:
         model = Seller

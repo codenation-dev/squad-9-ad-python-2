@@ -24,5 +24,6 @@ urlpatterns = [
     path('comissions/', include('comission.urls')),
     path('notifications/', include('notifications.urls')),
     path('check_commision/', notifications_views.check_commision),
-    path('sellers/', include('seller.urls'))
+    path('sellers/', include('seller.urls')),
+    path('sales/', include('sales.urls'))
 ]

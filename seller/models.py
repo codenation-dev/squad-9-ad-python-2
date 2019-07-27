@@ -82,7 +82,7 @@ class Seller(models.Model):
                                        verbose_name='Comissao')
 
     def __str__(self):
-        return self.name + self.last_name
+        return self.name + " " + self.last_name
 
     class Meta:
         verbose_name = "Vendedor"

@@ -29,7 +29,7 @@ venv
 comission/__pycache__/
 core/__pycache__/
 notificacoes/__pycache__/
-vendas/__pycache__/
+sales/__pycache__/
 vendedor/__pycache__/
 
 # PyInstaller
