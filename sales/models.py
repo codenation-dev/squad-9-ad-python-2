@@ -19,6 +19,10 @@ class Sales(models.Model):
               (11, "Novembro"),
               (12, "Dezembro"))
 
+    year = models.IntegerField(verbose_name="Ano",
+                               null=False,
+                               default=0)
+
     seller = models.ForeignKey(Seller,
                                related_name='seller',
                                on_delete=models.PROTECT,
