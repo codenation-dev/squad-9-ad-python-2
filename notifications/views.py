@@ -7,7 +7,7 @@ from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from vendas.models import Vendas
+from sales.models import Sales
 from seller.models import Seller
 
 from .models import Notification
@@ -62,7 +62,7 @@ def _send_notification_if_necessary(seller, amount):
 
 
 def _last_months_sales(seller):
-    queryset = Vendas.objects.all()
+    queryset = Sales.objects.all()
     seller_sales = queryset.filter(seller=seller)
     return seller_sales.order_by('-month')[:5]
 

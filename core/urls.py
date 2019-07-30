@@ -18,6 +18,7 @@ from django.urls import path
 from django.urls import include
 
 from notifications import views as notifications_views
+from seller import views as seller_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +26,6 @@ urlpatterns = [
     path('notifications/', include('notifications.urls')),
     path('check_commision/', notifications_views.check_commision),
     path('sellers/', include('seller.urls')),
+    path('best_sellers/<int:month>', seller_views.best_sellers),
     path('sales/', include('sales.urls'))
 ]

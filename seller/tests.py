@@ -74,15 +74,15 @@ class SellerAPITest(APITestCase):
             comission_plan=self.comission_plan)
         self.seller3.save()
 
-        Sales(month=1, seller=self.seller, amount=1000.0).save()
-        Sales(month=2, seller=self.seller, amount=500.0).save()
-        Sales(month=3, seller=self.seller, amount=1100.0).save()
-        Sales(month=1, seller=self.seller2, amount=500.0).save()
-        Sales(month=2, seller=self.seller2, amount=1100.0).save()
-        Sales(month=3, seller=self.seller2, amount=1000.0).save()
-        Sales(month=1, seller=self.seller3, amount=1100.0).save()
-        Sales(month=2, seller=self.seller3, amount=1000.0).save()
-        Sales(month=3, seller=self.seller3, amount=500.0).save()
+        Sales(month=1, seller=self.seller, amount=1000.0, comission=25).save()
+        Sales(month=2, seller=self.seller, amount=500.0, comission=12).save()
+        Sales(month=3, seller=self.seller, amount=1100.0, comission=27).save()
+        Sales(month=1, seller=self.seller2, amount=500.0, comission=12).save()
+        Sales(month=2, seller=self.seller2, amount=1100.0, comission=27).save()
+        Sales(month=3, seller=self.seller2, amount=1000.0, comission=25).save()
+        Sales(month=1, seller=self.seller3, amount=1100.0, comission=27).save()
+        Sales(month=2, seller=self.seller3, amount=1000.0, comission=25).save()
+        Sales(month=3, seller=self.seller3, amount=500.0, comission=12).save()
 
     def test_create_seller(self):
         comission_plan = {
@@ -118,6 +118,6 @@ class SellerAPITest(APITestCase):
         self.assertTrue(type(body['id']) == int)
 
     def test_retrieve_sellers_month(self):
-        response = self.client.get('best_sellers/2')
+        response = self.client.get('/best_sellers/2')
         body = response.json()
         print(body)
