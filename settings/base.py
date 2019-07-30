@@ -87,7 +87,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
 # Mail
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -95,6 +94,6 @@ EMAIL_HOST = "smtp.sendgrid.net"
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', default=None)
 
 DEFAULT_FROM_EMAIL = 'sq9p2codenation@gmail.com'

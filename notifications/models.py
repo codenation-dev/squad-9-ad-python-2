@@ -10,8 +10,8 @@ class Notification(models.Model):
     seller = models.ForeignKey(
         Seller,
         verbose_name='Vendedor',
-        related_name='seller',
-        on_delete=models.CASCADE)
+        related_name='notificated_seller',
+        on_delete=models.PROTECT)
     amount = models.DecimalField(
         verbose_name="Valor de venda",
         decimal_places=2,
