@@ -118,6 +118,6 @@ class SellerAPITest(APITestCase):
         self.assertTrue(type(body['id']) == int)
 
     def test_retrieve_sellers_month(self):
-        response = self.client.get('/best_sellers/2')
+        response = self.client.get('/best_sellers/0/2')
         body = response.json()
         print(body)

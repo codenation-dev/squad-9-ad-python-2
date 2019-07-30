@@ -64,7 +64,7 @@ def _send_notification_if_necessary(seller, amount):
 def _last_months_sales(seller):
     queryset = Sales.objects.all()
     seller_sales = queryset.filter(seller=seller)
-    return seller_sales.order_by('-month')[:5]
+    return seller_sales.order_by('-year', '-month')[:5]
 
 
 def _calc_average_sale(sales):

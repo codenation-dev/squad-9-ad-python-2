@@ -22,8 +22,8 @@ class SellerViewSet(viewsets.ModelViewSet):
 
 
 @api_view(['GET'])
-def best_sellers(request, month):
-    sellers = Sales.objects.filter(month=month).order_by('-amount')
+def best_sellers(request, year, month):
+    sellers = Sales.objects.filter(year=year, month=month).order_by('-amount')
     sellers = [{'name': s.seller.name,
                 'id': s.seller.id,
                 'amount': s.amount} for s in sellers]
