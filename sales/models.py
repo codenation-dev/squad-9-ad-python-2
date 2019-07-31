@@ -28,11 +28,9 @@ class Sales(models.Model):
                                on_delete=models.PROTECT,
                                verbose_name='Vendedor')
 
-    month = models.CharField(verbose_name="Mes",
-                             choices=months,
-                             null=False,
-                             blank=False,
-                             max_length=15)
+    month = models.IntegerField(verbose_name="Mes",
+                                choices=months,
+                                null=False)
 
     amount = models.DecimalField(verbose_name="Valor",
                                  decimal_places=2,

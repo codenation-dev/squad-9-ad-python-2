@@ -26,6 +26,6 @@ urlpatterns = [
     path('notifications/', include('notifications.urls')),
     path('check_commision/', notifications_views.check_commision),
     path('sellers/', include('seller.urls')),
-    path('best_sellers/<int:month>', seller_views.best_sellers),
+    path('best_sellers/<int:year>/<int:month>', seller_views.best_sellers),
     path('month_comission/', include('sales.urls'))
 ]
